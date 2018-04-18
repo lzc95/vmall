@@ -66,20 +66,20 @@
 }
 
 .cartList li{
-    height:130px;
+    min-height:130px;
     border-bottom:1px dashed #ccc;
     position:relative;
 }
 
 .cartList img.gPic{
-    width:90px;
+    width:20%;
     height:100px;
 
 }
 .cartList .cartAttr{
     display: inline-block;
     height: 90px;
-    width: 200px;
+    width: 60%;
     margin: 0;
     font-size:13px;
     position: relative;
