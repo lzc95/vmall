@@ -1,0 +1,117 @@
+
+/* 搜索框 */
+.search{
+  width:100%;
+  height: 50px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: #fff;
+  z-index:1;
+}
+.search input{
+  width: 85%;
+  height: 30px;
+  border: 1px solid #f3f6f9;
+  border-radius: 15px;
+  position: relative;
+  margin:10px 7.5%;
+  background: #f3f6f9;
+  padding:0 15px;
+}
+
+/* 地址管理   address */
+.address{
+    width:100%;
+    min-height:100%;
+    height: 100%;
+    position: absolute;
+    left:0;
+    z-index: 100;
+    background: #fff;
+    font-size: 14px;
+}
+.address::-webkit-scrollbar{
+  display:none;
+  width:0;
+  height: 0;
+}
+.address .detailedAddress{
+  width:330px;
+  height: 30px;
+  margin-top:10px;
+  margin-left: 10px;
+  padding: 0px 5px;
+  border:1px solid #ccc;
+  border-radius: 5px;
+
+}
+
+.line{
+  border:1px dashed #ccc;
+}
+.addressList{
+  padding:0px 5px;
+}
+.addressList p{
+  margin-left:10px;
+  margin-bottom: 10px;
+  height: 30px;
+}
+.address p input{
+  width: 250px;
+  height: 25px;
+  border:1px solid #ccc;
+  border-radius: 5px;
+  padding-left: 10px;
+}
+.address p input.userName{
+  position: relative;
+  left: 12px;
+}
+.address button{
+    width:65%;
+    height: 35px;
+    margin:20px 17.5%;
+    line-height: 35px;
+    background:#3E90F7;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    border-radius:10px;
+    outline: none;
+    border:none;
+}
+
+.address ul.addressList li{
+  background: #ccc;
+  padding-left: 10px;
+  padding-top:15px;
+  margin-top: 10px;
+  height: 70px;
+  color: #3E90F7;
+}
+
+
+/* 地址管理里的添加地址按钮 */
+.addAddress{
+  position:fixed;bottom:0;
+  width:100%;
+  height:65px;
+  background:#f3f6f9;
+}
+
+.addAddress button{
+  width:65%;
+  height: 35px;
+  margin:15px 17.5%;
+  line-height: 35px;
+  background:#3E90F7;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  border-radius:10px;
+  outline: none;
+  border:none;
+}
+

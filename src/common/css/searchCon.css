@@ -1,0 +1,47 @@
+.searchCon{
+    width:100%;
+    min-height: 100%;
+    height:100%;
+    position: absolute;
+    left:0;
+    top:0;
+    z-index: 100;
+    background: #fff;
+    overflow-y:auto;
+}
+
+.searchCon::-webkit-scrollbar{
+    display: none;
+    width:0px;
+}
+
+/* 搜索框 */
+.search{
+    width:100%;
+    height: 50px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: #fff;
+    z-index:1;
+  }
+  .searchCon .search input{
+    width: 73%;
+    height: 30px;
+    border: 1px solid #f3f6f9;
+    border-radius: 15px;
+    position: relative;
+    margin:10px 3% 10px 7%;
+    background: #f3f6f9;
+    padding:0 15px;
+  }
+
+.search_btn{
+    height: 30px;
+    border-radius: 15px;
+    width:13%;
+    color: #fff;
+    background:#33A3F4;
+    outline:none;
+    border:none;
+}

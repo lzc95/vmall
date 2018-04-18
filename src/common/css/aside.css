@@ -1,0 +1,53 @@
+.aside {
+    height:calc(100% - 100px);
+    height:-moz-calc(100% - 100px);
+    height:-webkit-calc(100% - 100px);
+    width: 90px;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    -webkit-overflow-scrolling: auto;
+    background-color:#fff;
+    position:fixed;
+    margin-top:50px;
+    margin-bottom: 50px;
+}
+  ul,li{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+  }
+  .aside::-webkit-scrollbar {
+    display: none;
+  }
+  .aside  ul {
+    height: 100%;
+    width: 100%;
+  }
+  .aside  ul li {
+    text-align: center;
+    color: #000;
+    height: 45px;
+    line-height: 45px;
+    border-bottom: 1px solid #F3F3F3;
+  }
+  /* .aside > ul li a {
+    display: block;
+    padding: 4vw 0;
+    position: relative;
+    font-size: 16px;
+  } */
+  /* .aside > ul li .active {
+    position: relative;
+    font-size: 22px;
+  }
+  .aside > ul li .active::before {
+    width: 3px;
+    height: 28px;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -14px;
+    background-color: green;
+  } */
+  

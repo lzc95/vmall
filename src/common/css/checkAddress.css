@@ -1,0 +1,50 @@
+
+.mask{
+    width:100%;
+    height: 100%;
+    position: fixed;
+    bottom:0;
+    background:rgba(0,0,0,0.3);
+    padding-top:40px;
+}
+.allAddress{
+    width:100%;
+    height: 50%;
+    position: fixed;
+    bottom:0;
+    background:#fff;
+    padding-top: 10px;
+    
+}
+.operation{
+    border-bottom: 1px solid #ccc;
+    padding:0 15px;
+    height: 35px;
+}
+.allAddressCon li{
+    height: 60px;
+    padding-top:10px;
+    background: #f3f6f9;
+    width:90%;
+    margin: 0 auto;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+    margin-top: 20px;
+   
+}
+.cancel,.add{
+    color:#3E90F7;
+    font-size: 16px;
+    font-weight: bold;
+    width:30%;
+
+
+}
+.cancel{
+    text-align: left
+}
+.add{
+    float: right;
+    text-align: right;
+}
