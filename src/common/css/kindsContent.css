@@ -5,8 +5,6 @@
     width:calc(100% - 90px);
     width:-moz-calc(100% - 90px);
     width:-webkit-calc(100% - 90px);
-    -webkit-overflow-scrolling: auto;
-    -webkit-overflow-scrolling: touch;
     position: absolute;
     left: 90px;
     top:50px;

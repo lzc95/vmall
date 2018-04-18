@@ -76,7 +76,7 @@ class Home extends React.Component{
                 <ul className='info'>
                    <li><img src="/src/common/img/circle_ok.svg"/>自营品牌</li>
                    <li><img src="/src/common/img/circle_ok.svg"/>无忧退货</li>
-                   <li><img src="/src/common/img/circle_ok.svg"/>48小时快速退款</li>
+                   <li><img src="/src/common/img/circle_ok.svg"/>极速退款</li>
                 </ul>
                 <Banner/>
                 <div className='new'>
@@ -96,7 +96,7 @@ class Home extends React.Component{
                      </ul>
                 </div>
                 <p style={{clear:'left'}}></p>
-                <p style={{color:'#3E90F7',textAlign:'center',marginTop:50,marginBottom:100}}>***^_^人家也是有底线的^_^***</p>
+                <p style={{color:'#3E90F7',textAlign:'center',marginTop:30,marginBottom:80}}>***^_^人家也是有底线的^_^***</p>
               </div>  
             </div>
         )
