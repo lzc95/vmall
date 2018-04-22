@@ -25,8 +25,12 @@ class NormalLoginForm extends React.Component {
         })
         .then(function(res){
             if(res.data.code==1){
-               window.location.reload()
-               this.props.history.push('/user');   
+               Toast.loading('登录中',2, null, false);
+               setTimeout(function(){
+                  window.location.reload()
+               },2000)
+              // 
+              //  this.props.history.push('/user');   
 
             }
             else{

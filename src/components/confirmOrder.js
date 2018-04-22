@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../components/Header'
-import KeyBoard from '../components/keyboard'
+import Keyboard from '../components/keyboard'
 
 
 import axios from 'axios';
@@ -8,6 +8,7 @@ import {REQUEST_URL,toFixed_2} from '../common/lib';
 const URL=REQUEST_URL+'/upload/';
 import parseQuery from '../common/parseQuery';
 import '../common/css/confirmOrder.css';
+import '../common/css/checkAddress.css';
 
 
 class Order extends React.Component{
@@ -18,11 +19,13 @@ class Order extends React.Component{
             cart:[],
             address:[],
             addressList:[],
-            allAddress:false
+            allAddress:false,
+            keyboard:false
         }
         this.cancel=this.cancel.bind(this);
         this.add=this.add.bind(this);
-        this.submitOrder=this.submitOrder.bind(this)
+        this.submitOrder=this.submitOrder.bind(this);
+        this.clear_keyboard=this.clear_keyboard.bind(this)
     }
 
     //更改收货信息
@@ -55,6 +58,7 @@ class Order extends React.Component{
             }
         }
     }
+
     cancel(){
         this.setState({
             allAddress:false
@@ -64,17 +68,20 @@ class Order extends React.Component{
          this.props.history.push('/addAddress')
     }
 
+
+    //取消密码键盘
+    clear_keyboard(){
+        this.setState({
+           keyboard:false  
+        })
+    }
+
     //提交订单
     submitOrder(){
-         axios.post(REQUEST_URL+'/submitOrder',{
-            cart:this.state.cart,
-            pay_price:this.state.sum,
-            aId:this.state.address
-         }).then(function(res){
-                
-         }).catch(function(err){
-
-         })
+        this.setState({
+            keyboard:true
+        })
+        
     }
 
     componentWillMount(){
@@ -105,9 +112,10 @@ class Order extends React.Component{
                   address:res.data.defaultAddress
               })
         }).catch(function(err){
-
+            console.log(err)
         })
     }
+
 
      render(){
          let allAddress;
@@ -144,6 +152,29 @@ class Order extends React.Component{
                 <div></div>
             )
          }
+   
+        //密码键盘的显示与隐藏
+         let keyboard;
+         if(this.state.keyboard){
+             keyboard=(
+                 <div>
+                    <p className="clear_keyboard" onClick={this.clear_keyboard}>
+                       <img src="/src/common/img/close.svg" style={{width:22,height:22}}/>
+                       <span>取消</span>
+                    </p>
+                   <Keyboard  cart={this.state.cart}  pay_price={this.state.sum} 
+                   aId={this.state.address}/>
+                 </div>
+                
+             )
+         }
+         else{
+            keyboard=(
+                <div></div>
+            )
+         }
+
+
          return(
              <div className='confirmOrder'>
                  <div className='confirmOrder_con'>
@@ -171,6 +202,7 @@ class Order extends React.Component{
                                         <img src={URL+item.gPic}/>
                                         <p className="orderGCon">
                                           <span >{item.gName}</span><br/>
+                                          <span style={{color:'#52A2EE'}}>规格:{item.checkAttr}</span><br/>
                                           <span className='gprice'>¥{item.gPrice}</span>
                                           <span className="num">X{item.num}</span>
                                         </p>
@@ -179,7 +211,8 @@ class Order extends React.Component{
                               })
                             }
                     </ul>
-                    {/* <KeyBoard/> */}
+
+                   
                     <div className="orderFooter">
                        <ul>
                           <li className="sum">合计:<span style={{color:'red'}}>¥{this.state.sum}</span></li>
@@ -187,6 +220,7 @@ class Order extends React.Component{
                        </ul>
                     </div>
                     {allAddress}
+                    {keyboard}
                  </div>
              </div>
          )

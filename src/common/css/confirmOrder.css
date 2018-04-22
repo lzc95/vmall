@@ -21,7 +21,7 @@
 
 .ordergoods li{
     width:96%;
-    height:130px;
+    height:140px;
     margin-left:2%;
     padding-top: 10px;
     border-bottom:1px dashed #ccc;
@@ -42,7 +42,7 @@
 }
 .ordergoods li .gprice{
     display: inline-block;
-    margin-top:20px;
+    /* margin-top:20px; */
     color:red;
 }
 .ordergoods li .num{
@@ -87,3 +87,19 @@
     margin-bottom: 20px;
 }
 
+.clear_keyboard{
+    position: fixed;
+    bottom:250px;
+    height:40px;
+    line-height: 40px;
+    z-index:200;
+    width:100%;
+    background: #fff;
+    font-size:16px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+.clear_keyboard img{
+    position: relative;
+    top:-3px;
+}

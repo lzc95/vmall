@@ -218,7 +218,7 @@ class Cart extends React.Component{
 
     render(){
         let cartCon;
-        if(this.state.cartState){
+        if(this.state.cartState && this.state.cartList.length>0){
             cartCon=(
                 <div>
                     <ul className="cartList">
@@ -232,6 +232,7 @@ class Cart extends React.Component{
                                   onClick={this.goDetail.bind(this,item.gId)}/>
                                  <p className="cartAttr" >
                                  <span>{item.gName}</span><br/>
+                                 <span style={{color:'#52A2EE'}}>规格:{item.checkAttr}</span><br/>
                                  <span style={{color:'red',fontSize:17}}>¥{toFixed_2(item.gPrice)}</span><br/>
                                  <span className="num">
                                      <img src='/src/common/img/reduce.svg' 

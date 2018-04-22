@@ -23,6 +23,7 @@
     line-height: 50px;
     font-size: 16px;
     padding:0 5px;
+    text-align:center;
 }
 .info li{
     width:33.3333%;
@@ -68,7 +69,7 @@
     color:#1296db;
     margin-bottom: 20px;
     font-size: 15px;
-    letter-spacing:5px
+    letter-spacing:5px;
 }
 .new .title img{
    width:25px;

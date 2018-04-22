@@ -66,7 +66,7 @@
 }
 
 .cartList li{
-    min-height:130px;
+    min-height:140px;
     border-bottom:1px dashed #ccc;
     position:relative;
 }
@@ -87,12 +87,12 @@
 }
 
 .circle{
-    width:21px;
+    width:10%;
     height:21px;
-    margin-right: 10px;
 }
 .del{
     position: relative;
+    width:10%;
     top: 35px;
     right:0px;
 

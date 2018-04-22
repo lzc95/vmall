@@ -18,7 +18,9 @@ class goodsDetail extends React.Component{
         this.state={
             uId:-1,
             isCollect:false,
-            goods:[]
+            goods:[],
+            checkAttr:'',
+
         }
         this.isCollect=this.isCollect.bind(this)
     }
@@ -29,6 +31,13 @@ class goodsDetail extends React.Component{
     back(){
         this.props.history.goBack() 
     }
+
+    checkAttr(attr){
+       this.setState({
+          checkAttr:attr,
+       })
+    }
+
     // 收藏
     isCollect(){
         console.log(this.state.isCollect)
@@ -138,16 +147,23 @@ class goodsDetail extends React.Component{
      //加入购物车
      addCart(){
         if(this.state.uId!=-1){
-            var _this=this;
-            var query=parseQuery(window.location.href);
-            axios.post(REQUEST_URL+'/addCart',{
-                uId:this.state.uId,
-                gId:query.gId
-            }).then(function(res){
-                
-            }).catch(function(err){
-                console.log(err)
-            })
+            if(this.state.checkAttr){
+                var _this=this;
+                var query=parseQuery(window.location.href);
+                axios.post(REQUEST_URL+'/addCart',{
+                    uId:this.state.uId,
+                    gId:query.gId,
+                    attr:this.state.checkAttr
+                }).then(function(res){
+                    
+                }).catch(function(err){
+                    console.log(err)
+                })
+            }
+            else{
+                Toast.fail('请选择商品规格!!!',1, null, false);
+            }
+            
         }
         else{
             Toast.fail('登录后才可以加入购物车!!!',1, null, false);
@@ -158,6 +174,18 @@ class goodsDetail extends React.Component{
     
 
     render(){
+        //未选择商品规格
+        const noCheck={
+            border:'1px dashed #ccc',
+            color:'#000'
+
+        }
+        //选中商品规格
+        const check={
+            border:'1px solis #3E90F7',
+            background:'#3E90F7',
+            color:'#fff'
+        }
         return(
             <div className='goodsDetail'>
                 <div>
@@ -170,6 +198,16 @@ class goodsDetail extends React.Component{
                                      <img src={URL+item.gPic} className='goodsPho'/>
                                      <div className='goodsDetail_con'>
                                         <p>{item.gName}</p>
+                                        <p style={{marginTop:10,color:'#3E90F7'}}>规格选项:</p>
+                                        <ul  className='gAttr'>{
+                                             item.attr.split('#').map((key)=>{
+                                                return(
+                                                    <li key={key} style={this.state.checkAttr==key?check:noCheck}
+                                                    onClick={this.checkAttr.bind(this,key)}>{key}</li>
+                                                )
+                                             })
+                                            }
+                                        </ul>
                                         <p><span className="price">¥{toFixed_2(item.gPrice)}</span></p>
                                     
                                      </div>

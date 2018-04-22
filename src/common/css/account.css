@@ -15,3 +15,16 @@
   width:0;
   height: 0;
 }
+
+.account .account_con{
+   margin-top:60px;
+}
+.account ul.account_con li{
+  width:96%;
+  margin:0 auto;
+  height: 50px;
+  line-height: 50px;
+  font-size: 16px;
+  padding-left: 20px;
+  border-bottom: 1px solid #3E90F7;
+}

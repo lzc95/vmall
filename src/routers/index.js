@@ -18,8 +18,9 @@ import searchCon from '../components/searchCon';
 import Account from '../components/accountSecurity';
 import Order from '../components/order';
 import confirmOrder from '../components/confirmOrder';
-import checkAddress from '../components/checkAddress';
 import NotFound from '../components/NotFound';
+import AccountPass from '../components/accountPass';
+import PayPass from '../components/payPass'
 class Routes extends React.Component{
    render(){
         return(
@@ -36,12 +37,13 @@ class Routes extends React.Component{
                       <Route path='/addressManage' component={Address}/>
                       <Route path='/addAddress' component={addAddress}/>
                       <Route path='/account' component={Account}/>
+                      <Route path='/accountpass' component={AccountPass}/>
+                      <Route path='/payPass' component={PayPass}/>
                       <Route path='/order' component={Order}/>
                       <Route path='/searchGoods' component={searchGoods}/>
                       <Route path='/goodsDetail' component={goodsDetail}/>
                       <Route path='/searchCon' component={searchCon}/>
                       <Route path='/confirmOrder' component={confirmOrder}/>
-                      <Route path='/checkAddress' component={checkAddress}/>
 
                       <Route component={NotFound} />
                     </Switch>
