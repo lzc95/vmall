@@ -3,6 +3,7 @@ import '../common/css/KeyBoard.css';
 import axios from 'axios';
 import {Toast} from 'antd-mobile';
 import {REQUEST_URL} from '../common/lib';
+import {withRouter} from 'react-router-dom';
 class Keyboard extends React.Component{
 
     constructor(props){
@@ -32,19 +33,25 @@ class Keyboard extends React.Component{
            }).then(function(res){
                if(res.data.code==1){
                        Toast.success(res.data.msg,1, null, false);
-
+                      
                        axios.post(REQUEST_URL+'/submitOrder',{
                             cart:_this.state.cart,
                             pay_price:_this.state.pay_price,
                             aId:_this.state.aId
                         }).then(function(res){
-                             _this.props.history.push('/order');
+                            setTimeout(function(){
+                                _this.props.history.push('/order');
+                            },1000)   
                         }).catch(function(err){
                             
                         })
                }
                else{
-                    Toast.fail(res.data.msg,1, null, false);
+                    Toast.fail(res.data.msg,2, null, false);
+                    _this.setState({
+                        show:[],
+                        password:[]
+                    })
                }
            }).catch(function(err){
                console.log(err)
@@ -101,4 +108,4 @@ class Keyboard extends React.Component{
      }
 }
 
-export default Keyboard;
+export default withRouter(Keyboard);

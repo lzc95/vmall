@@ -20,7 +20,8 @@ import Order from '../components/order';
 import confirmOrder from '../components/confirmOrder';
 import NotFound from '../components/NotFound';
 import AccountPass from '../components/accountPass';
-import PayPass from '../components/payPass'
+import PayPass from '../components/payPass';
+import OrderDetail from '../components/orderDetail'
 class Routes extends React.Component{
    render(){
         return(
@@ -44,6 +45,7 @@ class Routes extends React.Component{
                       <Route path='/goodsDetail' component={goodsDetail}/>
                       <Route path='/searchCon' component={searchCon}/>
                       <Route path='/confirmOrder' component={confirmOrder}/>
+                      <Route path='/orderDetail' component={OrderDetail}/>
 
                       <Route component={NotFound} />
                     </Switch>

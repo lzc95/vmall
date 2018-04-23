@@ -58,6 +58,10 @@
   margin-bottom: 10px;
   height: 30px;
 }
+
+.address .row{
+  margin:10px 0;
+}
 .address p input{
   width: 250px;
   height: 25px;

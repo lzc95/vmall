@@ -54,10 +54,10 @@ class addAddress extends React.Component{
     render(){
         return(
             <div className='address'>
-              <div style={{marginTop:60}}>
+              <div style={{marginTop:60,padding:10}}>
                 <Header title="添加收货地址"/>
-                <p><label>收货人：</label><input type='text' className='userName' ref='name'/></p>
-                <p><label>手机号码：</label><input type='text' ref='phone'/></p>
+                <p className='row'><label>收货人：</label><input type='text' className='userName' ref='name'/></p>
+                <p className='row'><label>手机号码：</label><input type='text' ref='phone'/></p>
                 <AreaSelect level={2} 
                    onChange={this.handleSelectedChange.bind(this)} 
                    size='md'

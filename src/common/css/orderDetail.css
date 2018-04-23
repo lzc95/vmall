@@ -1,0 +1,70 @@
+.orderDetail{
+    width:100%;
+    min-height: 100%;
+    height:100%;
+    position: absolute;
+    left:0;
+    top:0;
+    z-index: 100;
+    background: #f3f6f9;
+    overflow-y:auto;
+}
+.orderDetail::-webkit-scrollbar{
+    display:none;
+    width:0;
+    height: 0;    
+  }
+
+  .orderDetail .orderNum{
+    color:#3E90F7;
+}
+.orderDetail .gCon{
+    padding:5px 5%;
+    font-size:14px;
+    margin-top:15px;
+  
+}
+
+.orderDetail .gCon .goods{
+    margin-top:10px;
+}
+.orderDetail .gPic{
+    width:20%;
+    height: 100px;
+    float: left;
+}
+.orderDetail .gName{
+    width:70%;
+    padding:0 5px;
+    float: left;
+}
+.orderDetail .num_price{
+    position: relative;
+    top:10px;
+    left: 5px;
+    color:#3E90F7;
+    font-weight: bold;
+}
+.orderDetail .payPrice{
+    height: 35px;
+    line-height: 35px;
+    color:red;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.orderDetail .addressImg{
+    float: left;
+    margin-right:10px;
+}
+
+.orderDetail .shipSearch,.orderDetail .evaluate,.orderDetail .confirmReceive{
+    float: right;
+    width:25%;
+    height: 30px;
+    background: #fff;
+    border-color: #3E90F7;
+    outline: none;
+    margin-right:5px;
+    border-radius:15px;
+}
