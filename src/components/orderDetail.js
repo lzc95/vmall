@@ -39,7 +39,9 @@ class OrderDetail extends React.Component{
                     price:'',
                     address:'',
                     addressName:'',
-                    phone:''
+                    phone:'',
+                    is_receipt:'',
+                    is_ship:'',
                 };
                 for(var j=0;j<arr.length;j++){
                      if(order_number[i]==arr[j].order_number){
@@ -51,6 +53,7 @@ class OrderDetail extends React.Component{
                         obj['phone']=arr[j].phone; 
                         obj['is_receipt']=arr[j].is_receipt; //是否已经发货
                         obj['is_ship']=arr[j].is_ship;  //是否已经收货
+                        
                      }
                 }
                 orderArr.push(obj);

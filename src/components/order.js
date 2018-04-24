@@ -43,7 +43,9 @@ class Order extends React.Component{
                var obj={
                    name:'',
                    content:[],
-                   price:''
+                   price:'',
+                   is_receipt:'',
+                   is_ship:''
                };
                for(var j=0;j<arr.length;j++){
                     if(order_number[i]==arr[j].order_number){
